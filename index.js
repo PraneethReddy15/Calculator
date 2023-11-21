@@ -1,39 +1,23 @@
-var res=document.querySelector("#input-number");
-var btn=document.querySelector(".keys");
-for(let i=0;i<btn.clientHeight;i++)
-{
-    btn[i].addEventListener("click",(e)=>{compute(e.target)});
+var res=document.querySelector(".grid-input");
+var btn=document.querySelectorAll(".button");
 
-}
-res+=innerText="klnacoiqnbsco";
-function compute(button)
-{
-    var a=button.innerText;
-    switch(a)
-    {
-        case "0":
-            res.innerText+=a;
-        case "1":
-        case "2":
-        case "3":
-        case "4":
-        case "5":
-        case "6":
-        case "7":
-        case "8":
-        case "9":
-        case ".":
-        case "=":
-        case "+":
-        case "*":
-        case "%":
-        case "/":
-        case "r":
-        case "1":
-        case "1":
-        case "p":
-        case "c":
-        
+let string = "";
+let buttons = document.querySelectorAll('.button');
+Array.from(buttons).forEach((button)=>{
+  button.addEventListener('click', (e)=>{
+    if(e.target.innerHTML == '='){
+      string = eval(string);
+      document.querySelector('input').value = string;
     }
+    else if(e.target.innerHTML == 'AC'){
+      string = ""
+      document.querySelector('input').value = string;
+    }
+    else{ 
+    console.log(e.target)
+    string = string + e.target.innerHTML;
+    document.querySelector('input').value = string;
+      }
+  })
+})
 
-}
