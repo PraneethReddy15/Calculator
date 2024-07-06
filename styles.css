@@ -1,59 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Finlandica:ital,wght@0,400..700;1,400..700&display=swap');
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Finlandica", sans-serif;
+}
+:root {
+  --black--white: #ffffff;
+  --white--black: #000000;
+  --operator--button: #ed3b09;
+}
+.light-theme {
+  --black--white: #000000;
+  --white--black: #ffffff;
+  --operator--button: #6dee0a;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white--black);
+  font-size: 40px;
+  font-weight: 800;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.nav-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-attachment: fixed;
+}
+h1 {
+  font-family:  sans-serif;
+  margin-bottom: 5px;
+  color: var(--white--black);
+}
+#icon {
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 body {
-    background: linear-gradient(to right ,#35ae59,#2962a4);
-}
-.container{
-    border: 2px solid black ;
-     width: 100%;
-    
-}
-
-.grid-container {
-    margin: 30px 800px;
-
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    grid-template-columns:repeat(4,1fr);
-    grid-template-rows:repeat(5,1fr);
-    border-radius: 20px;
-    /* box-shadow: 10px 10px 10px 10px rgb(61, 61, 60); */
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, var(--black--white), #c2c4c6);
 }
 
-.grid-item {
-    border: 2px solid white;
-    align-items: center;
+.calculator {
+  border: 1px solid var(--white--black);
+  padding: 20px;
+  border-radius: 16px;
+  background: transparent;
+  box-shadow: 0px 3px 15px var(--white--black);
 }
 
-.grid-input {
-    grid-column: 1 / span 4;
-    margin: 6px;
-    margin-top: 20px;
-    padding: 20px;
-    font-weight: bolder;
-    font-size: 15px;
-    border-radius: 10px;
+input {
+  width: 320px;
+  border: none;
+  padding: 24px;
+  margin: 10px;
+  background: transparent;
+  box-shadow: 0px 3px 15px rgbs(84, 84, 84, 0.1);
+  font-size: 40px;
+  text-align: right;
+  cursor: pointer;
+  color: var(--white--black);
+  border: 2px solid var(--white--black);
+  border-radius: 5px;
 }
 
-.input {
-    width: 100%;
-    padding: 30px 0px;
-    border: 2px solid black;
+input::placeholder {
+  color: var(--white--black);
 }
 
 button {
-    padding: 20px;
-    border-radius: 20px;
-    margin: 4px 4px;
-    font-size: 20px;
-    cursor: pointer;
+  border: none;
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--white--black);
+  font-size: 20px;
+  box-shadow: -4px -4px 10px var(--black--white);
+  cursor: pointer;
 }
-button:hover{
-    background-color: rgb(11, 8, 6);
-    color: aliceblue;
+
+.equalBtn {
+  background-color: #fb7c14;
+}
+
+.operator {
+  color: var(--operator--button);
 }
